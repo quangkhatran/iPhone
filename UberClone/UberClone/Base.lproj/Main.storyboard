@@ -135,13 +135,23 @@
                                     <action selector="callUberTapped:" destination="HxV-nP-8gV" eventType="touchUpInside" id="8eg-xa-6MG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkN-wb-Z7S" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ir9-iN-Kfh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TkN-wb-Z7S" firstAttribute="leading" secondItem="3ue-SL-YVH" secondAttribute="leading" id="Dkw-hW-pQP"/>
                             <constraint firstItem="3ue-SL-YVH" firstAttribute="trailing" secondItem="Z81-OX-ZjK" secondAttribute="trailing" constant="20" id="Lsr-MO-ixQ"/>
                             <constraint firstItem="Z81-OX-ZjK" firstAttribute="top" secondItem="3ue-SL-YVH" secondAttribute="top" constant="20" id="MGL-sa-12g"/>
                             <constraint firstItem="Fvx-hl-eR7" firstAttribute="top" secondItem="Z81-OX-ZjK" secondAttribute="bottom" constant="10" id="qQh-u6-sba"/>
+                            <constraint firstItem="3ue-SL-YVH" firstAttribute="trailing" secondItem="TkN-wb-Z7S" secondAttribute="trailing" id="tcG-I9-qfZ"/>
                             <constraint firstItem="Fvx-hl-eR7" firstAttribute="centerX" secondItem="dmy-zP-SJ7" secondAttribute="centerX" id="yDX-9x-lFI"/>
+                            <constraint firstItem="3ue-SL-YVH" firstAttribute="bottom" secondItem="TkN-wb-Z7S" secondAttribute="bottom" id="yFS-w2-h4H"/>
                             <constraint firstItem="Z81-OX-ZjK" firstAttribute="leading" secondItem="3ue-SL-YVH" secondAttribute="leading" constant="20" id="zdj-SA-Oxq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3ue-SL-YVH"/>
@@ -154,6 +164,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="TkN-wb-Z7S" id="hFm-8D-HCb"/>
                         <outlet property="callAnUberButton" destination="Fvx-hl-eR7" id="Pap-nF-Sy2"/>
                         <outlet property="map" destination="Z81-OX-ZjK" id="fVa-Yt-ILQ"/>
                     </connections>

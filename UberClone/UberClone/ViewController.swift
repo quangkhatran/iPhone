@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleMobileAds
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomButton: UIButton!
     
     var signUpMode = true
+    var interstitial: GADInterstitial!
     
     @IBAction func topTapped(_ sender: Any) {
        
@@ -79,6 +81,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func bottomTapped(_ sender: Any) {
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+        
         if signUpMode {
             topButton.setTitle("Log In", for: .normal)
             bottomButton.setTitle("Sign Up", for: .normal)
@@ -100,7 +108,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let request = GADRequest()
+        interstitial.load(request)
     }
 
 

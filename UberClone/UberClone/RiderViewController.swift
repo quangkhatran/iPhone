@@ -10,11 +10,13 @@ import UIKit
 import MapKit
 import FirebaseDatabase
 import FirebaseAuth
+import GoogleMobileAds
 
 class RiderViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var callAnUberButton: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var locationManger = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
@@ -55,6 +57,11 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716" // test banner ad
+        //bannerView.adUnitID = "ca-app-pub-2942940385157536/9907700527" // prod banner ad
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         locationManger.delegate = self
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
