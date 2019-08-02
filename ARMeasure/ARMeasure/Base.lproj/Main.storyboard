@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARMeasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uxg-fT-9en">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbQ-3N-ffC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeY-rU-tY2">
+                                <rect key="frame" x="147.5" y="812" width="119" height="30"/>
+                                <state key="normal" title="Set starting point"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="kIX-4j-1n8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GD9-e6-8Hg">
+                                <rect key="frame" x="186" y="761" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wuz-0L-phA">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Usv-EZ-l6i"/>
+                                    <constraint firstAttribute="height" constant="20" id="ihl-1d-jjX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AbQ-3N-ffC" firstAttribute="top" secondItem="uaP-CQ-SP4" secondAttribute="top" id="1gr-HD-csX"/>
+                            <constraint firstItem="uaP-CQ-SP4" firstAttribute="trailing" secondItem="AbQ-3N-ffC" secondAttribute="trailing" id="Cd5-Oh-7DD"/>
+                            <constraint firstItem="uaP-CQ-SP4" firstAttribute="bottom" secondItem="AbQ-3N-ffC" secondAttribute="bottom" id="NtE-dT-BJz"/>
+                            <constraint firstItem="WeY-rU-tY2" firstAttribute="centerX" secondItem="uxg-fT-9en" secondAttribute="centerX" id="R4l-8y-6pr"/>
+                            <constraint firstItem="AbQ-3N-ffC" firstAttribute="leading" secondItem="uaP-CQ-SP4" secondAttribute="leading" id="aT6-Td-mz7"/>
+                            <constraint firstItem="WeY-rU-tY2" firstAttribute="top" secondItem="GD9-e6-8Hg" secondAttribute="bottom" constant="30" id="b64-P2-KvG"/>
+                            <constraint firstItem="Wuz-0L-phA" firstAttribute="centerY" secondItem="uxg-fT-9en" secondAttribute="centerY" id="bdF-HB-j2w"/>
+                            <constraint firstItem="uaP-CQ-SP4" firstAttribute="bottom" secondItem="WeY-rU-tY2" secondAttribute="bottom" constant="20" id="qMM-jo-t9H"/>
+                            <constraint firstItem="Wuz-0L-phA" firstAttribute="centerX" secondItem="uxg-fT-9en" secondAttribute="centerX" id="wMd-uE-316"/>
+                            <constraint firstItem="GD9-e6-8Hg" firstAttribute="centerX" secondItem="uxg-fT-9en" secondAttribute="centerX" id="xgE-e9-bet"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uaP-CQ-SP4"/>
+                    </view>
+                    <connections>
+                        <outlet property="measurementLabel" destination="GD9-e6-8Hg" id="Od4-TK-v2G"/>
+                        <outlet property="sceneView" destination="AbQ-3N-ffC" id="gDf-a3-Q4S"/>
+                        <outlet property="targetView" destination="Wuz-0L-phA" id="EOV-fc-PpZ"/>
+                        <outlet property="theButton" destination="WeY-rU-tY2" id="vPu-bQ-Gh4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

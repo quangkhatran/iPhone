@@ -1,10 +1,5 @@
-import UIKit
-var a:[String] = []
+import Cocoa
+import CreateMLUI
 
-print(a.count)
-var isFollowing:Dictionary<String,Bool> = [:]
-isFollowing["abc"] = true
-isFollowing["cde"] = false
-print(isFollowing)
-
+MLImageClassifierBuilder().showInLiveView()
 
